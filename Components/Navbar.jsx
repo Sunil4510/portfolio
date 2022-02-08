@@ -18,6 +18,9 @@ const pages = ['About', 'Works', 'Contact'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 import Link from 'next/link'
 
+//styles 
+const headerStyle = 'font-bold text-2xl font-lob cursor-pointer text-current hover:text-green-400 hover:animate-bounce hover:border-green-400 hover:border-b-2'
+
 const Navbar = () => {
 
   const {systemTheme, theme, setTheme} = useTheme();  
@@ -64,10 +67,10 @@ const Navbar = () => {
 
   return (
     <AppBar position="static" className="app_bar dark:border-gray-700">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" className="px-20 sm:px-4">
         <Toolbar disableGutters>
           <Typography
-            className="font-bold"
+            className="font-bold font-Creep text-4xl"
             variant="h5"
             noWrap
             component="div"
@@ -106,11 +109,11 @@ const Navbar = () => {
               }}
             >
             <MenuItem key="home" onClick={handleCloseNavMenu}>
-            <Typography textAlign="center"><Link href="/">HOME</Link></Typography>
+            <Typography textAlign="center"><Link href="/"><p className={headerStyle}>Home</p></Link></Typography>
           </MenuItem>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link href={page}>{page}</Link></Typography>
+                  <Typography textAlign="center"><Link href={page}><p className={headerStyle}>{page}</p></Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -120,17 +123,18 @@ const Navbar = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            className="font-bold font-Creep"
           >
             Sunil Kurapati
           </Typography>
           <Box 
-          className="space-x-9 items-center justify-center pacity-25"
+          className="space-x-9 items-center justify-center pacity-25 "
           sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           
           <Link href="/" className='hover:font-bold hover:opacity-50 text-current'
           key="home" onClick={handleCloseNavMenu}
           sx={{ my: 2,display: 'block' }}>
-          <p className='cursor-pointer hover:font-bold hover:opacity-50 text-current'>HOME</p>
+          <p className={headerStyle}>Home</p>
          </Link>
 
             {pages.map((page) => (
@@ -139,7 +143,7 @@ const Navbar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2,display: 'block' }}
               >
-                <p className='cursor-pointer hover:font-bold hover:opacity-50 text-current'>{page}</p>
+                <p className={headerStyle}>{page}</p>
               </Link>
             ))}
           </Box>
