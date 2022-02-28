@@ -7,3 +7,9 @@
     @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
   }
 }
+.left{
+  flex:0.6;
+}
+.right{
+  flex:0.4;
+}

@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useTheme } from 'next-themes';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-const pages = ['About', 'Works', 'Contact'];
+const pages = ['About','Skills', 'Projects', 'Contact'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 import Link from 'next/link'
 
