@@ -2,8 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import {motion} from 'framer-motion'
 const Skill = () => {
-  const images = ['/html3.svg','/css2.png','/js1.png','/react2.png','/nodejs.png','/r4.png','/next3.svg','/mongodb1.svg','/rest3.png','/mysql2.png','/java4.png','/vs1.png','/fire2.jpg']
-  const names = ['HTML','CSS','JS','REACTJS','NODEJS','RESPONSIVE DESIGN','NEXTJS','MONGODB','RESTFUL API','MYSQL','JAVA','VSCODE','FIREBASE']
+  const images = ['/html3.svg','/css2.png','/js1.png','/react2.png','/nodejs.png','/r4.png','/next3.svg','/mongodb1.svg','/rest3.png','/mysql2.png','/java4.png','/vs1.png','/fire2.jpg','/tailwind.png']
+  const names = ['HTML','CSS','JS','REACTJS','NODEJS','RESPONSIVE DESIGN','NEXTJS','MONGODB','RESTFUL API','MYSQL','JAVA','VSCODE','FIREBASE','TAILWIND CSS']
   return (
     <>
     <h1 className="text-center uppercase mt-10 mb-20 font-black  text-6xl font-Hahmlet">My Skills</h1>
