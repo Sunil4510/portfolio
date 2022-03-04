@@ -3,31 +3,50 @@ import Image from 'next/image'
 //import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 //import { Carousel } from 'react-responsive-carousel';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-cube";
 
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { EffectCards, EffectCoverflow,EffectCube ,EffectFlip, Navigation, Pagination } from 'swiper';
+import "swiper/css/effect-cards";
+import Myprojects from './Myprojects'
+// import SwiperCore, {
+//   EffectCoverflow,
+//   Pagination,
+//   Navigation
+// } from "swiper/core";
+// SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
 // Import Swiper styles
 import 'swiper/css';
+import Cards from './Cards';
 const Project = () => {
   return (
-    <div className="project flex items-center justify-evenly sm:flex-col">
+    <div className="project flex items-center justify-evenly lg:flex-row md:flex-col-reverse sm:flex-col-reverse">
         <div className="project__left">
             <Image src='/projects.svg' height={400} width={400}/>
         </div>
-        <div className="project__right">
-        <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-    
-      </Swiper>
-        </div>
-        
-    </div>
+        <div className="project__right mt-40 rounded-xl">    
+            <Swiper 
+            effect={"cards"}
+            centeredSlides={true}
+            slidesPerView={1}
+            grabCursor={true}
+            modules={[EffectCards]}
+            className="mySwiper h-full object-cover w-80 sm:w-60"
+          >
+          {Myprojects.map((curproject)=>{
+            return(
+                <SwiperSlide key={curproject.id}>
+                <Cards key={curproject.id} {...curproject}/>
+            </SwiperSlide>
+            )
+          })}
+ 
+          </Swiper>
+    </div>    
+  </div>
   )
 }
 
@@ -60,3 +79,4 @@ export default Project
         </div>
     </Carousel>
     */
+   

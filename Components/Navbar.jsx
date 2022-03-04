@@ -66,7 +66,7 @@ const Navbar = () => {
   } 
 
   return (
-    <AppBar position="static" className="app_bar dark:border-gray-700">
+    <AppBar position="static" className="app_bar mt-2 shadow-none dark:border-gray-700">
       <Container maxWidth="xl" className="px-20 sm:px-4">
         <Toolbar disableGutters>
           <Typography

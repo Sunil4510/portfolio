@@ -16,7 +16,7 @@ const Home = () => {
         },
     }
     return (
-        <div className="flex items-center justify-between text-current p-20 sm:mx-28 sm:p-16 sm:flex-col">
+        <div className="flex items-center justify-between text-current p-20 sm:mx-28 sm:p-16 sm:flex-col-reverse">
             <motion.div initial="hidden" animate="visible" variants={variants} className="left space-y-4">
                 <p className="font-bold text-3xl font-Acme sm:text-2xl">Hello, I'am</p><br/>
                 <span className="font-bold text-6xl ml-2 text-green-400 font-Teko sm:text-5xl sm:ml-0">Sunil Kurapati</span><br/>
@@ -30,7 +30,7 @@ const Home = () => {
                     whileHover={{ rotate:[5,-5,1],scale:1.2 }}
                     animate={{ rotate:[10,-10,1] }}
                     transition={{duration:1}} 
-                    className="rounded-xl left-36 sm:left-1 sm:h-60 sm:w-60 sm:mt-10 w-80 h-80 shadow-black shadow-xl relative cursor-pointer bg-gradient-to-tr from-red-400 to-slate-300 hover:bg-gradient-to-tr hover:from-red-500 hover:to-slate-400 hover:animate-pulse"
+                    className="rounded-xl left-36 sm:left-1 sm:h-60 sm:w-60 sm:mt-0 mb-20 w-80 h-80 shadow-black shadow-xl relative cursor-pointer bg-gradient-to-tr from-red-400 to-slate-300 hover:bg-gradient-to-tr hover:from-red-500 hover:to-slate-400 hover:animate-pulse"
                 >
                     <Image src="/sunil1.jpg" alt="profile" width={355} height={355} className="mix-blend-overlay rounded-xl absolute inset-0 object-cover"/>
                 </motion.div>

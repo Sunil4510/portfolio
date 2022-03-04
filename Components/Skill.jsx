@@ -6,8 +6,8 @@ const Skill = () => {
   const names = ['HTML','CSS','JS','REACTJS','NODEJS','RESPONSIVE DESIGN','NEXTJS','MONGODB','RESTFUL API','MYSQL','JAVA','VSCODE','FIREBASE','TAILWIND CSS']
   return (
     <>
-    <h1 className="text-center uppercase mt-10 mb-20 font-black  text-6xl font-Hahmlet">My Skills</h1>
-    <div className="grid grid-cols-5 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 ">
+    <h1 className="text-center uppercase mt-10 mb-20 font-black  text-6xl font-Hahmlet sm:text-4xl">My Skills</h1>
+    <div className="grid place-items-center grid-cols-5 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 ">
         {images.map((src, i)=>{
           console.log(i)
          return (
@@ -15,7 +15,7 @@ const Skill = () => {
            whileHover={{ rotate:[5,-5,1],scale:1.2 }}
             animate={{ rotate:[0,-360,360] }}
             transition={{duration:1}} 
-           className="p-4 cursor-pointer flex flex-col items-center mx-28 mt-10 border-4 shadow-xl shadow-current rounded-xl border-current hover:bg-purple-900">
+           className="p-4 cursor-pointer flex flex-col items-center mx-28 mt-10 border-4 shadow-xl shadow-current rounded-xl border-current hover:bg-purple-900 w-40">
            <h1 className="font-bold font-Acme text-xl">{names[i]}</h1><br/>
            <Image src={src} height={100} width={100} className="rounded-lg"/>
            </motion.div>
