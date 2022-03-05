@@ -32,3 +32,8 @@
   height: 300px;
   object-fit:fill ;
 }
+
+.project__right__h1{
+  color: currentColor;
+  text-shadow: -2px 2px 4px rgba(217, 255, 0, 0.979);
+}

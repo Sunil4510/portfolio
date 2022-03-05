@@ -27,7 +27,8 @@ const Project = () => {
         <div className="project__left">
             <Image src='/projects.svg' height={400} width={400}/>
         </div>
-        <div className="project__right mt-40 rounded-xl">    
+        <div className="project__right mt-14 rounded-xl">    
+        <h1 className="project__right__h1 mb-20 text-5xl">My Projects</h1>
             <Swiper 
             effect={"cards"}
             centeredSlides={true}
