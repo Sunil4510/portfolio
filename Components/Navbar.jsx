@@ -52,14 +52,14 @@ const Navbar = () => {
 
     if(currentTheme === 'dark'){
       return(
-        <Tooltip title="Switch to light theme">
-        <LightModeIcon className="w-8 h-8 cursor-pointer" onClick={()=>setTheme('light')}/>
+        <Tooltip title="Switch to light theme" className="">
+          <LightModeIcon className="w-8 h-8 cursor-pointer" onClick={()=>setTheme('light')}/>
         </Tooltip>
         )
     }else{
       return(
-        <Tooltip title="Switch to dark theme">
-        <DarkModeIcon  className="w-8 h-8 cursor-pointer" onClick={()=>setTheme('dark')}/>
+        <Tooltip title="Switch to dark theme" className="">
+          <DarkModeIcon  className="w-8 h-8 cursor-pointer" onClick={()=>setTheme('dark')}/>
         </Tooltip>
       )
     }
@@ -67,7 +67,7 @@ const Navbar = () => {
 
   return (
     <AppBar position="static" className="app_bar mt-2 shadow-none dark:border-gray-700">
-      <Container maxWidth="xl" className="px-20 sm:px-4">
+      <Container maxWidth="xl" className="px-20 sm:px-0">
         <Toolbar disableGutters>
           <Typography
             className="font-bold font-Creep text-4xl"
@@ -76,7 +76,7 @@ const Navbar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-          Sunil Kurapati
+          <p className="mr-10"> {`<`} </p>Sunil Kurapati<p className="ml-10">{`/>`}</p>
           </Typography>
          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -125,7 +125,7 @@ const Navbar = () => {
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
             className="font-bold font-Creep"
           >
-            Sunil Kurapati
+            <p className="mr-4"> {`<`} </p>Sunil Kurapati<p className="ml-4">{`/>`}</p>
           </Typography>
           <Box 
           className="space-x-9 items-center justify-center pacity-25 "

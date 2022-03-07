@@ -27,6 +27,7 @@ module.exports = {
         'play': ['Play', 'sans-serif'],
         'Teko': ['Teko', 'sans-serif'],
         'Yellowtail': ['Yellowtail', 'cursive'],
+        'BioRhyme':['BioRhyme', 'serif']
       }
     },
   },
