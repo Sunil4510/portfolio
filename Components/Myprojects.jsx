@@ -25,11 +25,11 @@
     },
     { 
         id:4,
-        title:"Covid-19",
-        description:"Covid-19 project for tracking of cases,deaths and recoveries",
-        img:"/fire2.jpg",
-        live:"",
-        repo:"",
+        title:"Weather Report",
+        description:"This project gives they weather report of worlwide countries and cities",
+        img:"/weather.jpg",
+        live:"https://sunil4510.github.io/Weather/",
+        repo:"https://github.com/Sunil4510/Weather",
     },
 ]
 export default Myprojects

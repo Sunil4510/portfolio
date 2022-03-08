@@ -24,22 +24,22 @@ import Cards from './Cards';
 const Project = () => {
   return (
     <>
-    <div className="project flex items-center justify-evenly lg:flex-row md:flex-col-reverse sm:flex-col-reverse">
+    <div className="project flex justify-evenly lg:flex-row md:flex-col-reverse sm:flex-col-reverse">
         <div className="project__left flex flex-col items-center mt-20">
             <h1 className="text-3xl w-2/3 font-Amiri">Portfolios are everything, promises are nothing. Do the work.</h1>
             <h3  className="text-xl mt-2 ml-40">~Chase Jarvis</h3>
             <Image src='/projects.svg' height={400} width={400}/>
-            <Image src='/practical.svg' height={400} width={400}/>
-        </div>
-        <div className="project__right mt-14 rounded-xl">    
-        <h1 className="project__right__h1 mb-20 text-5xl">My Projects</h1>
+{/*            <Image src='/practical.svg' height={400} width={400}/>
+  */}        </div>
+        <div className="project__right  flex items-center flex-col mt-20 sm:mx-10 sm:mt-4 rounded-xl">    
+        <h1 className="project__right__h1 mb-20 sm:mb-14 text-5xl sm:text-3xl">My Projects</h1>
             <Swiper 
             effect={"cards"}
             centeredSlides={true}
             slidesPerView={1}
             grabCursor={true}
             modules={[EffectCards]}
-            className="mySwiper h-full object-cover w-80 sm:w-60"
+            className="mySwiper h-auto object-cover w-80 sm:w-60"
           >
           {Myprojects.map((curproject)=>{
             return(

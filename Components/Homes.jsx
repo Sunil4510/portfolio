@@ -25,7 +25,7 @@ const Home = () => {
                 <a className="font-bold text-xl text-current mt-10 " href="mailto:skurapatim3100@gmail.com"><button className="font-Hahmlet font-bold border-2 p-2 border-orange-400 shadow-xl shadow-black rounded-lg hover:bg-orange-400 hover:text-black transition ease-in-out delay-200 duration-150 hover:scale-125">Get In Touch</button></a>
                 <a className="font-bold text-xl ml-8 sm:ml-0 text-current" href="./Sunil Kurapati.pdf" target="_blank"><button className="font-Hahmlet font-bold sm:mt-6 border-2 p-2 border-orange-400 shadow-xl shadow-black rounded-lg hover:bg-orange-400 hover:text-black transition ease-in-out delay-200 duration-150 hover:scale-125">Download Resume</button></a>
             </motion.div>
-            <div className="right mt-10 md:mt-20 ">
+            <div className="right mt-10 md:mt-28 ">
                 <div className="flex items-center lg:flex-col sm:flex-col md:flex-col sm:ml-20 sm:mt-10 sm:w-96 h-80 ">
                     <div className="flex flex-col lg:ml-20 md:ml-80 sm:ml-24 font-BioRhyme font-medium text-xl tracking-widest sm:text-sm">
                         <h1 className="w-96 sm:w-40 md:w-auto tracking-widest">The Nature of a portfolio is that it's always a <span className="font-bold">WORK IN PROGRESS</span>.</h1>

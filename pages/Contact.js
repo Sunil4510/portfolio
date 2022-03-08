@@ -1,10 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from "framer-motion"
+import Navbar from '../Components/Navbar'
 
 const Contact = () => {
   return (
     <div>
+    <Navbar/>
     <motion.div
     whileHover={{ rotate:[5,-5,1],scale:1.2 }}
     animate={{ rotate:[10,-10,1] }}
