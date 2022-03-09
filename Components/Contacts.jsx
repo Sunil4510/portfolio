@@ -22,7 +22,7 @@ const Contacts = () => {
 
         <div className="right flex flex-col space-y-10">
             <h1 className="text-5xl">Contact me</h1>
-            <p className="text-xl mt-10 font-Acme opacity-70 sm:h-40 w-full sm:text-lg">I am available on almost every social media. You can message me, I will reply within 24 hours. I can help you with React, Nodejs, and MERN Development.</p>
+            <p className="text-xl mt-10 font-Acme opacity-70 sm:h-40 w-full sm:text-lg">I am available on almost every social media. You can message me, I will reply within 24 hours. I can help you with Reactjs, Nodejs, and MERN Development.</p>
             <div className="social_media p-4 space-x-5 sm:flex sm:p-0 sm:pt-20">
                 <a href="https://github.com/Sunil4510" className="github " target="_blank" rel="noopener noreferrer"><GitHubIcon sx={{ fontSize: 40 }}/></a>
                 <a href="https://www.linkedin.com/in/sunil-kurapati-91198a202/" className="icon-button linkedin" target="_blank" rel="noopener noreferrer"><LinkedInIcon sx={{ fontSize: 40,color:"rgb(0, 153, 255)" }}/></a>

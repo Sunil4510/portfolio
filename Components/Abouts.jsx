@@ -25,10 +25,10 @@ const Abouts = () => {
                     
                 <strong className="text-3xl sm:pl-10 text-orange-400">What I've been up to :</strong>  
                     <ul className="m-3 ml-8 list-disc sm:pl-10 text-sky-800 font-bold text-xl">
-                        <li><p className="text-indigo-800">Building this</p></li>
-                        <li><p className="text-indigo-800">Building this</p></li>
-                        <li><p className="text-indigo-800">Building this</p></li>
-                        <li><p className="text-indigo-800">Building this</p></li>
+                        <li><p className="text-indigo-800">Building Projects</p></li>
+                        <li><p className="text-indigo-800">Open Source Contributor</p></li>
+                        <li><p className="text-indigo-800">Keen Learner</p></li>
+                        <li><p className="text-indigo-800">An Engineer</p></li>
                     </ul>  
             </div>
         </div>
