@@ -1,7 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from "framer-motion"
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import EmailIcon from '@mui/icons-material/Email';
 const Home = () => {
     const variants={
         hidden:{
@@ -22,6 +25,12 @@ const Home = () => {
                 <span className="font-bold text-6xl ml-2 text-green-400 font-Teko sm:text-5xl sm:ml-0">Sunil Kurapati</span><br/>
                 <h1 className="font-bold text-3xl ml-2 text-teal-400 font-play sm:text-2xl ">Aspiring MERN Developer</h1>
                 <p className="font-bold text-2xl ml-2 tracking-widest sm:tracking-normal sm:w-80 space-y-4 font-web">A curiousity-driven coder with a passion for designing and building user-centric, inclusive experiences on the web.</p><br/>
+                <div className="social_media pb-10 space-x-5 sm:flex sm:pt-10">
+                    <a href="https://github.com/Sunil4510" className="github " target="_blank" rel="noopener noreferrer"><GitHubIcon sx={{ fontSize: 40 }}/></a>
+                    <a href="https://www.linkedin.com/in/sunil-kurapati-91198a202/" className="icon-button linkedin" target="_blank" rel="noopener noreferrer"><LinkedInIcon sx={{ fontSize: 40,color:"rgb(0, 153, 255)" }}/></a>
+                    <a href="mailto:skurapatim3100@gmail.com" className="icon-button google" target="_blank" rel="noopener noreferrer"><EmailIcon sx={{ fontSize: 40 ,color:"red"}}/></a>
+                    <a href="https://twitter.com/SunilKurapati5" className="icon-button twitter" target="_blank" rel="noopener noreferrer"><TwitterIcon sx={{ fontSize: 40,color:"cyan" }}/></a>
+                </div>
                 <a className="font-bold text-xl text-current mt-10 " href="mailto:skurapatim3100@gmail.com"><button className="font-Hahmlet font-bold border-2 p-2 border-orange-400 shadow-xl shadow-black rounded-lg hover:bg-orange-400 hover:text-black transition ease-in-out delay-200 duration-150 hover:scale-125">Get In Touch</button></a>
                 <a className="font-bold text-xl ml-8 sm:ml-0 text-current" href="./Sunil Kurapati.pdf" target="_blank"><button className="font-Hahmlet font-bold sm:mt-6 border-2 p-2 border-orange-400 shadow-xl shadow-black rounded-lg hover:bg-orange-400 hover:text-black transition ease-in-out delay-200 duration-150 hover:scale-125">Download Resume</button></a>
             </motion.div>
