@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <div className="flex items-center justify-between text-current p-20 sm:mx-28 sm:p-16 sm:flex-col md:flex-col lg:flex-row">
             <motion.div initial="hidden" animate="visible" variants={variants} className="left space-y-4">
-                <p className="font-bold text-3xl font-Acme sm:text-2xl">Hello, I'am</p><br/>
+                <p className="font-bold text-3xl font-Acme sm:text-2xl">Hello, I&apos;am</p><br/>
                 <span className="font-bold text-6xl ml-2 text-green-400 font-Teko sm:text-5xl sm:ml-0">Sunil Kurapati</span><br/>
                 <h1 className="font-bold text-3xl ml-2 text-teal-400 font-play sm:text-2xl ">Aspiring MERN Developer</h1>
                 <p className="font-bold text-2xl ml-2 tracking-widest sm:tracking-normal sm:w-80 space-y-4 font-web">A curiousity-driven coder with a passion for designing and building user-centric, inclusive experiences on the web.</p><br/>
@@ -37,7 +37,7 @@ const Home = () => {
             <div className="right mt-10 md:mt-28 ">
                 <div className="flex items-center lg:flex-col sm:flex-col md:flex-col sm:ml-20 sm:mt-10 sm:w-96 h-80 ">
                     <div className="flex flex-col lg:ml-20 md:ml-80 sm:ml-24 font-BioRhyme font-medium text-xl tracking-widest sm:text-sm">
-                        <h1 className="w-96 sm:w-40 md:w-auto tracking-widest">The Nature of a portfolio is that it's always a <span className="font-bold">WORK IN PROGRESS</span>.</h1>
+                        <h1 className="w-96 sm:w-40 md:w-auto tracking-widest">The Nature of a portfolio is that it&apos;s always a <span className="font-bold">WORK IN PROGRESS</span>.</h1>
                         <p className="ml-20">~unknown</p>
                     </div>
                     <div className="md:mr-40">

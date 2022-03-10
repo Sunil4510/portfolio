@@ -24,8 +24,8 @@ const Cards = ({description,img,title,live,repo}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <a href={live} target="_blank"><Button size="small">Live</Button></a>
-        <a href={repo} target="_blank"><Button size="small">github repo</Button></a>
+        <a href={live} target="_blank" rel="noopener noreferrer"><Button size="small">Live</Button></a>
+        <a href={repo} target="_blank" rel="noopener noreferrer"><Button size="small">github repo</Button></a>
       </CardActions>
     </Card>
   )

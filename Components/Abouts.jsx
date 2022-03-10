@@ -21,9 +21,9 @@ const Abouts = () => {
                     </motion.div>
                 </div>
             <div className="right_right flex-1">
-                <p className="w-96 mb-20 text-xl sm:text-lg sm:p-10 tracking-wider font-web font-bold">Hello! I'm Sunil, a junior front-end developer based in Solapur, India. I love to work on exciting projects that test what I've learnt, whilst being exposed to the power and potential of the ever-evolving technologies around us. I'm always looking for better, and more importantly, ethical and accessible ways to solve the common problems we are faced with day-to-day.</p>
+                <p className="w-96 mb-20 text-xl sm:text-lg sm:p-10 tracking-wider font-web font-bold">Hello! I&apos;m Sunil, a junior front-end developer based in Solapur, India. I love to work on exciting projects that test what I&apos;ve learnt, whilst being exposed to the power and potential of the ever-evolving technologies around us. I&apos;m always looking for better, and more importantly, ethical and accessible ways to solve the common problems we are faced with day-to-day.</p>
                     
-                <strong className="text-3xl sm:pl-10 text-orange-400">What I've been up to :</strong>  
+                <strong className="text-3xl sm:pl-10 text-orange-400">What I&apos;ve been up to :</strong>  
                     <ul className="m-3 ml-8 list-disc sm:pl-10 text-sky-800 font-bold text-xl">
                         <li><p className="text-indigo-800">Building Projects</p></li>
                         <li><p className="text-indigo-800">Open Source Contributor</p></li>
