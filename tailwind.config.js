@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['apps/site/pages/**/*.{js,ts,jsx,tsx}','apps/site/components/**/*.{js,ts,jsx,tsx}'],
+  content: ['apps/site/pages/**/*.{js,ts,jsx,tsx}'],
   darkMode:'class',
   theme: {
     screens:{
