@@ -6,6 +6,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode:"class",
+  enabled: process.env.NODE_ENV === "production",
   theme: {
     screens:{
       sm:{'max':'600px'},
