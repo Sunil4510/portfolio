@@ -17,9 +17,9 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 const pages = ['About','Skills', 'Projects', 'Contact'];
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 import Link from 'next/link'
-
+import { useRouter } from 'next/router'
 //styles 
-const headerStyle = 'font-bold text-2xl font-lob cursor-pointer text-current hover:text-green-400 hover:animate-bounce hover:border-green-400 hover:border-b-2'
+const headerStyle = 'font-bold text-2xl font-Acme cursor-pointer text-current hover:text-green-400 hover:border-green-400 hover:border-b-2 transition ease-in-out  hover:scale-125 shadow-xl rounded-xl w-28 text-center'
 
 const Navbar = () => {
 
@@ -64,13 +64,13 @@ const Navbar = () => {
       )
     }
   } 
-
+  const router = useRouter();
   return (
     <AppBar position="static" className="app_bar mt-2 shadow-none dark:border-gray-700">
       <Container maxWidth="xl" className="px-20 sm:px-0">
         <Toolbar disableGutters>
           <Typography
-            className="font-bold font-Creep text-4xl"
+            className="font-bold font-Creep lg:text-4xl md:text-3xl"
             variant="h5"
             noWrap
             component="div"
@@ -109,14 +109,15 @@ const Navbar = () => {
               }}
             >
             <MenuItem key="home" onClick={handleCloseNavMenu}>
-            <Typography textAlign="center"><Link href="/"><p className={headerStyle}>Home</p></Link></Typography>
+            <Typography textAlign="center" className={router.pathname=="/"?"active":""}><Link href="/"><p className={headerStyle}>Home</p></Link></Typography>
           </MenuItem>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link href={page}><p className={headerStyle}>{page}</p></Link></Typography>
+                  <Typography textAlign="center" className={router.pathname==`/${page}`?"active":""}><Link href={page}><p className={headerStyle}>{page}</p></Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
+            {console.log(router.pathname)}
           </Box>
           <Typography
             variant="h6"
@@ -130,14 +131,16 @@ const Navbar = () => {
           <Box 
           className="space-x-9 items-center justify-center pacity-25 "
           sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          
+          <Typography className={router.pathname==`/`?"active":""}>
           <Link href="/" className='hover:font-bold hover:opacity-50 text-current'
           key="home" onClick={handleCloseNavMenu}
           sx={{ my: 2,display: 'block' }}>
           <p className={headerStyle}>Home</p>
          </Link>
+         </Typography>
 
             {pages.map((page) => (
+             <Typography className={router.pathname==`/${page}`?"active":""}> 
               <Link href={page}
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -145,6 +148,7 @@ const Navbar = () => {
               >
                 <p className={headerStyle}>{page}</p>
               </Link>
+              </Typography>
             ))}
           </Box>
 

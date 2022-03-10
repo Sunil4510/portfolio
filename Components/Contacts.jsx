@@ -47,7 +47,7 @@ const Contacts = () => {
           </div>
         </div>    
     </div>
-    <footer className="text-center font-semibold text-2xl mb-4 opacity-60 text-gray-600">Made With ❤️ by Sunil Kurapati </footer>
+    <footer className="text-center font-semibold text-2xl mb-4 opacity-60 text-gray-600 sm:text-sm sm:mt-10">Made With ❤️ by Sunil Kurapati </footer>
   </div>  
   )
 }
