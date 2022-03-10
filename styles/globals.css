@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Amiri:ital@0;1&family=Creepster&family=Great+Vibes&family=Hahmlet:wght@100&family=Istok+Web&family=Lobster&family=Merienda:wght@400;700&family=Permanent+Marker&family=Play:wght@400;700&family=Supermercado+One&family=Teko:wght@400;500&family=Yellowtail&display=swap');
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import './base.css';
 @import 'tailwindcss/utilities';
 @layer base{
   body,.app_bar{
