@@ -1,12 +1,8 @@
 //const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-  ],
+  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
   darkMode:"class",
-  enabled: process.env.NODE_ENV === "production",
   theme: {
     screens:{
       sm:{'max':'600px'},
