@@ -5,10 +5,10 @@
 
 @layer base{
   body,.app_bar{
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 #{!important};
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 !important;
   }
   .app_bar{
-    @apply shadow-none #{!important};
+    @apply shadow-none !important;
   }
   .contact__info{
     @apply flex items-center flex-col
