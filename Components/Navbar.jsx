@@ -53,13 +53,13 @@ const Navbar = () => {
     if(currentTheme === 'dark'){
       return(
         <Tooltip title="Switch to light theme" className="">
-          <LightModeIcon className="w-8 h-8 cursor-pointer" onClick={()=>setTheme('light')}/>
+          <LightModeIcon className="mode_ln" onClick={()=>setTheme('light')}/>
         </Tooltip>
         )
     }else{
       return(
         <Tooltip title="Switch to dark theme" className="">
-          <DarkModeIcon  className="w-8 h-8 cursor-pointer" onClick={()=>setTheme('dark')}/>
+          <DarkModeIcon  className="mode_ln" onClick={()=>setTheme('dark')}/>
         </Tooltip>
       )
     }

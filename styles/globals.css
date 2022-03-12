@@ -25,6 +25,9 @@
   .active{
     @apply border-b-2 border-green-400 text-green-400 rounded-xl w-28 hover:scale-125 hover:border-none !important;
   }
+  .mode_ln{
+    @apply w-8 h-8 cursor-pointer !important;
+  }
 }
 .left{
   flex:0.6;
