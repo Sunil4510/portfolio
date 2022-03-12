@@ -23,7 +23,7 @@
     @apply text-xl font-semibold opacity-70 text-amber-900
   }
   .active{
-    @apply border-b-2 border-green-400 text-green-400 rounded-xl w-28 hover:scale-125 hover:border-none
+    @apply border-b-2 border-green-400 text-green-400 rounded-xl w-28 hover:scale-125 hover:border-none !important;
   }
 }
 .left{
