@@ -10,6 +10,9 @@
   .app_bar{
     @apply shadow-none !important;
   }
+  .app_bar_head{
+    @apply font-bold font-Creep lg:text-4xl md:text-3xl;
+  }
   .contact__info{
     @apply flex items-center flex-col
   }

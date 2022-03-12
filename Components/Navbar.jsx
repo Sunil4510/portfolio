@@ -70,7 +70,7 @@ const Navbar = () => {
       <Container maxWidth="xl" className="px-20 sm:px-0">
         <Toolbar disableGutters>
           <Typography
-            className="font-bold font-Creep lg:text-4xl md:text-3xl"
+            className="app_bar_head"
             variant="h5"
             noWrap
             component="div"
@@ -124,7 +124,7 @@ const Navbar = () => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-            className="font-bold font-Creep"
+            className="app_bar_head"
           >
             <p className="mr-4"> {`<`} </p>Sunil Kurapati<p className="ml-4">{`/>`}</p>
           </Typography>
