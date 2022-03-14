@@ -29,7 +29,7 @@ const Contacts = () => {
                 <a href="mailto:skurapatim3100@gmail.com" className="icon-button google" target="_blank" rel="noopener noreferrer"><EmailIcon sx={{ fontSize: 40 ,color:"red"}}/></a>
                 <a href="https://twitter.com/SunilKurapati5" className="icon-button twitter" target="_blank" rel="noopener noreferrer"><TwitterIcon sx={{ fontSize: 40,color:"cyan" }}/></a>
             </div>
-            <a className="font-bold text-xl ml-10 sm:ml-0 text-current" href="./Sunil Kurapati.pdf" target="_blank"><button className="font-Hahmlet font-bold sm:mt-6 border-2 p-2 border-orange-400 shadow-xl shadow-black rounded-lg hover:bg-orange-400 hover:text-black transition ease-in-out delay-200 duration-150 hover:scale-125">See My Resume</button></a>
+            <a className="font-bold text-xl ml-10 sm:ml-0 text-current" href="./Sunil_Kurapati.pdf" target="_blank"><button className="font-Hahmlet font-bold sm:mt-6 border-2 p-2 border-orange-400 shadow-xl shadow-black rounded-lg hover:bg-orange-400 hover:text-black transition ease-in-out delay-200 duration-150 hover:scale-125">See My Resume</button></a>
         </div>    
     </div>
     <div className="flex items-center justify-evenly sm:flex-col">
