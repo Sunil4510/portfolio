@@ -31,5 +31,13 @@
         live:"https://sunil4510.github.io/Weather/",
         repo:"https://github.com/Sunil4510/Weather",
     },
+    { 
+        id:5,
+        title:"Spotify CLone",
+        description:"This Project Gives Top Artist and Songs",
+        img:"/spotify.png",
+        live:"https://music-spotify-player.herokuapp.com/",
+        repo:"https://github.com/Sunil4510/Spotify-music",
+    },
 ]
 export default Myprojects
