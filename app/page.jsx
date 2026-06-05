@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
+import Architecture from '../components/Architecture';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
@@ -53,6 +54,10 @@ export default function Home() {
 
         <section id="skills" className="scroll-mt-24">
           <Skills theme={theme} isMuted={isMuted} />
+        </section>
+
+        <section id="architecture" className="scroll-mt-24">
+          <Architecture theme={theme} isMuted={isMuted} />
         </section>
 
         <section id="experience" className="scroll-mt-24">

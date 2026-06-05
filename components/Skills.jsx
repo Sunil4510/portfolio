@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Terminal, Database, ShieldAlert, Cpu, Palette, Settings, CheckCircle2, GitFork } from 'lucide-react';
+import { Terminal, Database, ShieldAlert, Cpu, Palette, Settings, CheckCircle2 } from 'lucide-react';
 
 export default function Skills({ theme, isMuted }) {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -75,18 +75,6 @@ export default function Skills({ theme, isMuted }) {
         { name: 'OAuth2 & JWT', level: 90, cricketStat: 'Crease line boundary check: 90' },
         { name: 'Multi-Tenant RBAC', level: 92, cricketStat: 'DRS Review Accuracy: 92' },
         { name: 'Distributed Encryption', level: 86, cricketStat: 'Leg Before Wicket validation: 86' }
-      ]
-    },
-    {
-      category: 'Arch & Patterns',
-      icon: GitFork,
-      cinemaRole: 'Screenplay Structure & Formats',
-      cricketRole: 'Tactical Playbook & Fielding',
-      skills: [
-        { name: 'Monolithic & Microservices', level: 94, cricketStat: 'Field placements: 94 (Decoupled systems)' },
-        { name: 'Event-Driven & Serverless', level: 92, cricketStat: 'Match strategy: 92 (Async flow rate)' },
-        { name: 'Layered & MVC Architecture', level: 90, cricketStat: 'Batting order setup: 90 (Clear concerns)' },
-        { name: 'Design Patterns (Singleton, Mediator)', level: 88, cricketStat: 'Captaincy decisions: 88 (Code reuse)' }
       ]
     }
   ];
