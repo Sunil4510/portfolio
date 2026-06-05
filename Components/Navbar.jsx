@@ -1,192 +1,170 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { useTheme } from 'next-themes';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-const pages = ['About','Skills', 'Projects', 'Contact'];
-//const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-//styles 
-const headerStyle = 'font-bold text-2xl font-Acme cursor-pointer text-current hover:text-green-400 hover:border-green-400 hover:border-b-2 transition ease-in-out  hover:scale-125 shadow-xl rounded-xl w-28 text-center'
+'use client';
 
-const Navbar = () => {
+import { useState, useEffect } from 'react';
+import { Volume2, VolumeX, Menu, X, Clapperboard, Award, Sparkles } from 'lucide-react';
+import { playCricketShot, playCinemaSwell } from '../utils/audio';
 
-  const {systemTheme, theme, setTheme} = useTheme();  
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [mounted, setMounted] = React.useState(false);
+const navItems = [
+  { id: 'hero', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' }
+];
 
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+export default function Navbar({ theme, setTheme, isMuted, setIsMuted }) {
+  const [activeSection, setActiveSection] = useState('hero');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // Tracking current scrolling section for highlight (Scroll Spy)
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
 
-  const renderThemeChanger = () => {
-    if(!mounted)return null;
-    const currentTheme = theme === 'system' ? systemTheme : theme;
+      const scrollPosition = window.scrollY + 150; // offset
+      for (const item of navItems) {
+        const el = document.getElementById(item.id);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(item.id);
+          }
+        }
+      }
+    };
 
-    if(currentTheme === 'dark'){
-      return(
-        <Tooltip title="Switch to light theme" className="">
-          <LightModeIcon className="mode_ln" onClick={()=>setTheme('light')}/>
-        </Tooltip>
-        )
-    }else{
-      return(
-        <Tooltip title="Switch to dark theme" className="">
-          <DarkModeIcon  className="mode_ln" onClick={()=>setTheme('dark')}/>
-        </Tooltip>
-      )
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Audio toggle click handler
+  const toggleMute = () => {
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+    if (!nextMuted) {
+      if (theme === 'cricket') {
+        playCricketShot();
+      } else {
+        playCinemaSwell();
+      }
     }
-  } 
-  const router = useRouter();
+  };
+
+  const handleScrollTo = (id) => {
+    setIsMobileMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <AppBar position="static" className="app_bar mt-2 dark:border-gray-700">
-      <Container maxWidth="xl" className="px-20 sm:px-0">
-        <Toolbar disableGutters>
-          <Typography
-            className="app_bar_head"
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'py-3 bg-portfolioBg/80 backdrop-blur-md border-b border-portfolioBorder shadow-md' 
+        : 'py-6 bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-12">
+          
+          {/* Brand Logo */}
+          <div 
+            onClick={() => handleScrollTo('hero')}
+            className="flex items-center space-x-2 cursor-pointer font-accent font-bold text-xl tracking-wider text-portfolioAccent hover:scale-105 transition-transform"
           >
-          <p className="mr-10"> {`<`} </p>Sunil Kurapati<p className="ml-10">{`/>`}</p>
-          </Typography>
-         
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-            <MenuItem key="home" onClick={handleCloseNavMenu}>
-            <Typography textAlign="center" className={router.pathname=="/"?"active":""}><Link passHref href="/"><p className={headerStyle}>Home</p></Link></Typography>
-          </MenuItem>
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" className={router.pathname==`/${page}`?"active":""}><Link passHref href={page}><p className={headerStyle}>{page}</p></Link></Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-            {console.log(router.pathname)}
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-            className="app_bar_head"
-          >
-            <p className="mr-4"> {`<`} </p>Sunil Kurapati<p className="ml-4">{`/>`}</p>
-          </Typography>
-          <Box 
-          className="space-x-9 items-center justify-center pacity-25 "
-          sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <Typography className={router.pathname==`/`?"active":""}>
-          <Link passHref href="/" className='hover:font-bold hover:opacity-50 text-current'
-          key="home" onClick={handleCloseNavMenu}
-          sx={{ my: 2,display: 'block' }}>
-          <p className={headerStyle}>Home</p>
-         </Link>
-         </Typography>
+            {theme === 'cinema' ? (
+              <Clapperboard className="w-5 h-5 animate-pulse" />
+            ) : (
+              <Award className="w-5 h-5 animate-pulse" />
+            )}
+            <span>{`<SK />`}</span>
+          </div>
 
-            {pages.map((page,i) => (
-             <Typography key={i} className={router.pathname==`/${page}`?"active":""}> 
-              <Link passHref href={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2,display: 'block' }}
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleScrollTo(item.id)}
+                className={`relative font-accent font-medium text-sm tracking-wide transition-colors py-1 ${
+                  activeSection === item.id 
+                    ? 'text-portfolioAccent' 
+                    : 'text-portfolioMuted hover:text-portfolioText'
+                }`}
               >
-                <p className={headerStyle}>{page}</p>
-              </Link>
-              </Typography>
+                {item.label}
+                {activeSection === item.id && (
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-portfolioAccent rounded-full shadow-[0_0_8px_var(--portfolio-accent)]" />
+                )}
+              </button>
             ))}
-          </Box>
+          </div>
 
-          {renderThemeChanger()}
+          {/* Controls */}
+          <div className="flex items-center space-x-4">
+            
+            {/* Audio Toggle Button */}
+            <button
+              onClick={toggleMute}
+              title={isMuted ? "Unmute sound effects" : "Mute sound effects"}
+              className={`p-2 rounded-full border border-portfolioBorder hover:bg-portfolioCard transition-all hover:scale-105 ${
+                !isMuted ? 'text-portfolioAccent border-portfolioAccent' : 'text-portfolioMuted'
+              }`}
+            >
+              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5 animate-bounce" />}
+            </button>
 
-        </Toolbar>
-      </Container>
-    </AppBar>
+            {/* Cinema vs Cricket Toggle */}
+            <button
+              onClick={() => setTheme(theme === 'cinema' ? 'cricket' : 'cinema')}
+              className="px-3 py-1.5 rounded-full border border-portfolioBorder bg-portfolioCard/50 backdrop-blur-sm text-xs font-bold tracking-wider hover:border-portfolioAccent transition-all flex items-center space-x-2 shadow-inner"
+            >
+              {theme === 'cinema' ? (
+                <>
+                  <span>Cinema 🎥</span>
+                  <span className="text-portfolioAccent">🍿</span>
+                </>
+              ) : (
+                <>
+                  <span>Cricket 🏟️</span>
+                  <span className="text-portfolioAccent">🏏</span>
+                </>
+              )}
+            </button>
+
+            {/* Mobile Menu Toggle button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg text-portfolioMuted hover:text-portfolioText hover:bg-portfolioCard transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Panel */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed top-[60px] left-0 right-0 bottom-0 bg-portfolioBg/95 backdrop-blur-lg z-40 border-t border-portfolioBorder px-4 pt-4 pb-6 space-y-3 animate-fadeIn">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleScrollTo(item.id)}
+              className={`block w-full text-left py-3 px-4 rounded-xl font-accent font-semibold text-lg transition-all ${
+                activeSection === item.id 
+                  ? 'bg-portfolioCard text-portfolioAccent border-l-4 border-portfolioAccent' 
+                  : 'text-portfolioMuted hover:text-portfolioText hover:bg-portfolioCard/50'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </nav>
   );
-};
-export default Navbar;
-
-
-// <Box sx={{ flexGrow: 0 }}>
-//         //     <Tooltip title="Open settings">
-//         //       <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-//         //         <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-//         //       </IconButton>
-//         //     </Tooltip>
-//         //     <Menu
-//         //       sx={{ mt: '45px' }}
-//         //       id="menu-appbar"
-//         //       anchorEl={anchorElUser}
-//         //       anchorOrigin={{
-//         //         vertical: 'top',
-//         //         horizontal: 'right',
-//         //       }}
-//         //       keepMounted
-//         //       transformOrigin={{
-//         //         vertical: 'top',
-//         //         horizontal: 'right',
-//         //       }}
-//         //       open={Boolean(anchorElUser)}
-//         //       onClose={handleCloseUserMenu}
-//         //     >
-//         //       {settings.map((setting) => (
-//         //         <MenuItem key={setting} onClick={handleCloseNavMenu}>
-//         //           <Typography textAlign="center">{setting}</Typography>
-//         //         </MenuItem>
-//         //       ))}
-//         //     </Menu>
-//         //   </Box>
+}

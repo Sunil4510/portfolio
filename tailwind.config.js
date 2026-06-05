@@ -1,31 +1,28 @@
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}', 
-    './Components/**/*.{js,ts,jsx,tsx}'
-    ],
-  darkMode:'class',
+    './app/**/*.{js,ts,jsx,tsx}', 
+    './components/**/*.{js,ts,jsx,tsx}'
+  ],
+  darkMode: 'class',
   theme: {
-    screens:{
-      sm:{'max':'600px'},
-      md:{'min':'601px'},
-      lg:{'min':'1400px'}
-    },
     extend: {
-      fontFamily:{
-        'superMercado':['Supermercado One', 'cursive'],
-        'Acme': ['Acme', 'sans-serif'],
-        'Amiri': ['Amiri', 'serif'],
-       'Creep': ['Creepster', 'cursive'],
-        'Great': ['Great Vibes', 'cursive'],
-        'Hahmlet': ['Hahmlet', 'serif'],
-        'web': ['Istok Web', 'sans-serif'],
-        'lob': ['Lobster', 'cursive'],
-        'Meri': ['Merienda', 'cursive'],
-        'Marker': ['Permanent Marker', 'cursive'],
-        'play': ['Play', 'sans-serif'],
-        'Teko': ['Teko', 'sans-serif'],
-        'Yellowtail': ['Yellowtail', 'cursive'],
-        'BioRhyme':['BioRhyme', 'serif']
+      colors: {
+        portfolioBg: 'var(--portfolio-bg)',
+        portfolioCard: 'var(--portfolio-card)',
+        portfolioText: 'var(--portfolio-text)',
+        portfolioMuted: 'var(--portfolio-muted)',
+        portfolioAccent: 'var(--portfolio-accent)',
+        portfolioAccentHover: 'var(--portfolio-accent-hover)',
+        portfolioBorder: 'var(--portfolio-border)',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'sans-serif'],
+        accent: ['var(--font-accent)', 'sans-serif'],
+        display: ['var(--font-display)', 'serif']
+      },
+      boxShadow: {
+        'glow-gold': '0 0 20px rgba(212, 175, 55, 0.15)',
+        'glow-green': '0 0 20px rgba(82, 183, 136, 0.15)',
       }
     },
   },

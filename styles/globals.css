@@ -1,62 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Amiri:ital@0;1&family=Creepster&family=Great+Vibes&family=Hahmlet:wght@100&family=Istok+Web&family=Lobster&family=Merienda:wght@400;700&family=Permanent+Marker&family=Play:wght@400;700&family=Supermercado+One&family=Teko:wght@400;500&family=Yellowtail&display=swap');
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@layer base{
-  body,.app_bar{
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 !important;
+@layer base {
+  /* Default Theme (matches Cinema Mode 🍿) */
+  :root {
+    --portfolio-bg: #090a0f;
+    --portfolio-card: rgba(20, 22, 35, 0.7);
+    --portfolio-text: #f3f4f6;
+    --portfolio-muted: #9ca3af;
+    --portfolio-accent: #d4af37; /* Metallic Gold */
+    --portfolio-accent-hover: #fbbf24;
+    --portfolio-border: rgba(212, 175, 55, 0.2);
   }
-  .app_bar{
-    @apply shadow-none !important;
+
+  /* Cinema Theme Class */
+  .theme-cinema {
+    --portfolio-bg: #090a0f;
+    --portfolio-card: rgba(20, 22, 35, 0.75);
+    --portfolio-text: #f3f4f6;
+    --portfolio-muted: #a1a1aa;
+    --portfolio-accent: #d4af37; /* Movie Gold */
+    --portfolio-accent-hover: #fbbf24; /* Amber */
+    --portfolio-border: rgba(212, 175, 55, 0.2);
   }
-  .app_bar_head{
-    @apply font-bold font-Creep lg:text-4xl md:text-3xl !important;
+
+  /* Cricket Theme Class */
+  .theme-cricket {
+    --portfolio-bg: #0e1612; /* Stadium Night Dark Green */
+    --portfolio-card: rgba(22, 38, 30, 0.75);
+    --portfolio-text: #fdf0d5; /* Scoreboard Cream */
+    --portfolio-muted: #84a98c; /* Turf Green Muted */
+    --portfolio-accent: #52b788; /* Grass Green Accent */
+    --portfolio-accent-hover: #74c69d;
+    --portfolio-border: rgba(82, 183, 136, 0.2);
   }
-  .contact__info{
-    @apply flex items-center flex-col
+
+  body {
+    background-color: var(--portfolio-bg);
+    color: var(--portfolio-text);
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease, border-color 0.4s ease;
+    overflow-x: hidden;
   }
-  .contact__info > h1{
-    @apply text-3xl font-semibold mb-2
-  }
-  .contact__info > p{
-    @apply text-xl font-semibold opacity-70 text-amber-900
-  }
-  .active{
-    @apply border-b-2 border-green-400 text-green-400 rounded-xl w-28 hover:scale-125 hover:border-none !important;
-  }
-  .mode_ln{
-    @apply w-8 h-8 cursor-pointer !important;
-  }
-}
-.left{
-  flex:0.6;
-}
-.right{
-  flex:0.4;
 }
 
-.swiper {
-  padding-top: 10px;
-  padding-bottom: 10px;
+/* Glassmorphism custom styling */
+.glass {
+  background: var(--portfolio-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--portfolio-border);
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+/* Scrolling transitions & custom behaviors */
+html {
+  scroll-behavior: smooth;
 }
 
-.swiper-slide img {
-  width: 100%;
-  height: 250px;
-  object-fit:fill ;
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.project__right__h1{
-  color: currentColor;
-  text-shadow: -2px 2px 4px rgba(217, 255, 0, 0.979);
+::-webkit-scrollbar-track {
+  background: var(--portfolio-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--portfolio-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--portfolio-accent);
+}
+
+/* Custom glow backdrops */
+.glow-blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--portfolio-accent);
+  opacity: 0.08;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.6s ease;
+}
+
+/* Film strip animation details */
+.film-strip-border {
+  background-image: radial-gradient(circle, var(--portfolio-bg) 20%, transparent 20%),
+                    radial-gradient(circle, var(--portfolio-bg) 20%, transparent 20%);
+  background-size: 10px 10px;
+  background-position: 0 0, 0 30px;
 }
 
